@@ -1,19 +1,15 @@
-# docker-compose.yml
-
 version: '3.8'
-
 services:
   backend:
     build: ./backend
     ports:
       - "8000:8000"
     volumes:
-      # This syncs your local code with the container for development
       - ./backend:/app
 
   frontend:
     build: ./frontend
     ports:
-      - "3000:80" # Map host port 3000 to container port 80 (Nginx)
+      - "3000:80" 
     depends_on:
       - backend
