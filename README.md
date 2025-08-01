@@ -2,6 +2,7 @@
 
 ![GenAI Stack Screenshot](https://github.com/ashishsai960/AI-Planet/blob/master/Application1.jpg)
 ![GenAI Stack Screenshot](https://github.com/ashishsai960/AI-Planet/blob/master/Application2.jpg)
+![GenAI Stack Screenshot](https://github.com/ashishsai960/AI-Planet/blob/master/Application3.jpg)
 
 ## Overview
 
