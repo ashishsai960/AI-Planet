@@ -1,86 +1,96 @@
-GenAI Stack - Visual Workflow Builder
-This project is a No-Code/Low-Code web application designed to enable users to visually create and interact with intelligent workflows. Users can build "stacks" by dragging, dropping, and connecting components on a canvas. Once a workflow is built, users can interact with it through a chat interface to get real-time, AI-powered answers.
+# GenAI Stack - Visual Workflow Builder
 
-Key Features
-Visual Workflow Builder: Drag-and-drop interface powered by React Flow to create and connect workflow nodes.
+![GenAI Stack Screenshot](https-github-com-ashishsai960-AI-Planet-blob-main-Screenshot%202025-07-30%20at%201-33-20%E2%80%AFAM-jpg)
 
-Component-Based System: Build workflows using modular components like User Query, Knowledge Base, LLM (OpenAI), and Web Search.
+## Overview
 
-Stack Management: A dashboard to view all saved workflows and a modal to create new ones.
+[cite_start]GenAI Stack is a No-Code/Low-Code web application designed for visually creating and interacting with intelligent AI workflows. [cite: 122] [cite_start]The platform allows users to configure a flow of components that handle user input, extract information from documents, connect with large language models, and deliver answers through a chat interface. [cite: 123]
 
-Workflow Persistence: Save your created workflows to the backend.
+Once a workflow (called a "Stack") is built, users can test it in real-time by asking questions. [cite_start]The system processes the query through the user-defined components to generate a final, context-aware response. [cite: 124, 125]
 
-Interactive Chat: Test and run your workflows through a real-time chat modal.
+## Key Features
 
-File Uploads: The Knowledge Base component supports PDF uploads for context-aware AI responses.
+* **Visual Drag-and-Drop Canvas:** Build complex workflows by dragging components onto the canvas and connecting them.
+* **Stack Management:** A dashboard to view all saved workflows and a modal to create new ones from scratch.
+* **Component-Based Architecture:** Construct workflows using modular components:
+    * [cite_start]**User Query:** The entry point for user questions. [cite: 138, 140]
+    * [cite_start]**Knowledge Base:** Upload PDFs to provide context for the AI. [cite: 142, 143]
+    * [cite_start]**LLM (OpenAI):** Configure and interact with large language models like GPT. [cite: 150]
+    * [cite_start]**Web Search:** A placeholder for a tool to search the web. [cite: 134]
+    * [cite_start]**Output:** Displays the final generated response. [cite: 158]
+* [cite_start]**Real-time Chat Interaction:** Test and run your workflows through an interactive chat modal. [cite: 167]
+* [cite_start]**Dockerized Deployment:** The entire full-stack application is containerized with Docker for easy setup and consistent deployment. [cite: 193]
 
-Dockerized Deployment: The entire application is containerized for easy setup and consistent deployment.
+## Tech Stack
 
-Tech Stack
-Category	Technology
-Frontend	React.js
-Backend	FastAPI (Python)
-Drag & Drop	React Flow
-Vector Store	ChromaDB
-Text Extraction	PyMuPDF
-AI Models	OpenAI GPT (LLM), OpenAI Embeddings
-Setup and Installation
-Prerequisites
-Docker must be installed and running.
+| Category              | Technology                                   |
+| --------------------- | -------------------------------------------- |
+| **Frontend** | [cite_start]React.js [cite: 127]                         |
+| **Backend** | [cite_start]FastAPI (Python) [cite: 128]                  |
+| **Database** | [cite_start]PostgreSQL [cite: 129]                       |
+| **Drag & Drop** | [cite_start]React Flow [cite: 130]                       |
+| **Vector Store** | [cite_start]ChromaDB [cite: 131]                         |
+| **Text Extraction** | [cite_start]PyMuPDF [cite: 135]                          |
+| **AI Models** | [cite_start]OpenAI GPT (LLM), OpenAI Embeddings [cite: 132, 133] |
+| **Deployment** | Docker                                       |
 
-An OpenAI API key.
+---
 
-1. Clone the Repository
-Clone this project to your local machine:
+## Getting Started
 
-Bash
+### Prerequisites
+* [Docker](https://www.docker.com/products/docker-desktop/) installed and running.
+* An OpenAI API key with available credits.
 
-git clone https://github.com/ashishsai960/AI-Planet.git
-cd AI-Planet
-2. Configure Environment Variables
-In the backend/ folder, create a new file named .env. Add your OpenAI API key to this file:
+### Installation & Setup
 
-Code snippet
+1.  **Clone the Repository**
+    ```bash
+    git clone [https://github.com/ashishsai960/AI-Planet.git](https://github.com/ashishsai960/AI-Planet.git)
+    cd AI-Planet
+    ```
 
-# backend/.env
-OPENAI_API_KEY="sk-YourSecretApiKeyGoesHere"
-3. Build and Run with Docker
-From the root directory of the project, run the following command. This will build the images for the frontend and backend and start the application.
+2.  **Configure Environment Variables**
+    Create a file named `.env` inside the `backend/` directory and add your OpenAI API key.
+    ```env
+    # backend/.env
+    OPENAI_API_KEY="sk-YourSecretApiKeyGoesHere"
+    ```
 
-Bash
+3.  **Build and Run with Docker**
+    From the **root directory** of the project, run the following command. This will build the images for the frontend and backend and start the application.
+    ```bash
+    docker compose up --build
+    ```
 
-docker compose up --build
-4. Access the Application
-Once the containers are running, you can access the application in your web browser:
+4.  **Access the Application**
+    Once the containers are running, open your web browser and navigate to:
+    * **Frontend:** `http://localhost:3000`
 
-Frontend Application: http://localhost:3000
+---
 
-Backend API Docs: http://localhost:8000/docs
+## How It Works
 
-Application Workflow
-Dashboard: The application starts on the "My Stacks" dashboard, where you can view existing workflows or create a new one.
+1.  **Dashboard:** The application starts on the "My Stacks" dashboard, where you can view existing workflows or create a new one.
+2.  **Create Stack:** Clicking "+ New Stack" opens a modal to name and describe your workflow.
+3.  **Builder:** You are then taken to the canvas where you can drag components from the sidebar, drop them onto the canvas, and connect them to define the data flow.
+4.  **Configuration:** Each node on the canvas can be configured with specific settings (e.g., uploading a PDF to the Knowledge Base, setting the temperature for the LLM).
+5.  **Save:** The "Save" button sends the current state of your workflow (nodes and edges) to the backend.
+6.  **Chat with Stack:** Clicking this button opens a chat modal. When you send a message, the entire workflow and your query are sent to the backend for execution.
+7.  **Execution:** The backend processes the workflow by following the connections, queries the knowledge base, calls the LLM with the appropriate context and prompt, and returns the final answer.
+8.  **Response:** The AI's response is displayed in the chat window.
 
-Create Stack: Clicking "+ New Stack" opens a modal to name and describe your workflow.
+## API Endpoints
 
-Builder: You are then taken to the canvas where you can drag components from the sidebar, drop them onto the canvas, and connect them to define the data flow.
-
-Configuration: Each node on the canvas can be configured with specific settings (e.g., uploading a PDF to the Knowledge Base, setting the temperature for the LLM).
-
-Save: The "Save" button sends the current state of your workflow (nodes and edges) to the backend.
-
-Chat with Stack: Clicking this button opens a chat modal. When you send a message, the entire workflow and your query are sent to the backend for execution.
-
-Execution: The backend processes the workflow, queries the knowledge base, calls the LLM, and returns the final answer.
-
-Response: The AI's response is displayed in the chat window.
-
-API Endpoints
 The FastAPI backend exposes the following endpoints:
 
-POST /upload-document/: Handles PDF file uploads for the Knowledge Base.
+* [cite_start]`POST /upload-document/`: Handles PDF file uploads for the Knowledge Base. [cite: 207]
+* [cite_start]`POST /stacks/`: Saves a new workflow. [cite: 215]
+* [cite_start]`GET /stacks/`: Retrieves all saved workflows. [cite: 215]
+* [cite_start]`POST /execute/`: Executes a given workflow with a user query. [cite: 209]
 
-POST /stacks/: Saves a new workflow.
+## Future Improvements
 
-GET /stacks/: Retrieves all saved workflows.
-
-POST /execute/: Executes a given workflow with a user query.
+* **Load Saved Stacks:** Implement the logic to load a saved stack back onto the canvas for editing.
+* [cite_start]**User Authentication:** Add user accounts to keep stacks private and secure. [cite: 238]
+* [cite_start]**Chat History:** Persist chat conversations for each stack. [cite: 235]
