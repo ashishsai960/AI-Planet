@@ -5,34 +5,34 @@
 
 ## Overview
 
-[cite_start]GenAI Stack is a No-Code/Low-Code web application designed for visually creating and interacting with intelligent AI workflows. [cite: 122] [cite_start]The platform allows users to configure a flow of components that handle user input, extract information from documents, connect with large language models, and deliver answers through a chat interface. [cite: 123]
+GenAI Stack is a No-Code/Low-Code web application designed for visually creating and interacting with intelligent AI workflows. [cite: 122] The platform allows users to configure a flow of components that handle user input, extract information from documents, connect with large language models, and deliver answers through a chat interface. [cite: 123]
 
-Once a workflow (called a "Stack") is built, users can test it in real-time by asking questions. [cite_start]The system processes the query through the user-defined components to generate a final, context-aware response. [cite: 124, 125]
+Once a workflow (called a "Stack") is built, users can test it in real-time by asking questions. The system processes the query through the user-defined components to generate a final, context-aware response. [cite: 124, 125]
 
 ## Key Features
 
 * **Visual Drag-and-Drop Canvas:** Build complex workflows by dragging components onto the canvas and connecting them.
 * **Stack Management:** A dashboard to view all saved workflows and a modal to create new ones from scratch.
 * **Component-Based Architecture:** Construct workflows using modular components:
-    * [cite_start]**User Query:** The entry point for user questions. [cite: 138, 140]
-    * [cite_start]**Knowledge Base:** Upload PDFs to provide context for the AI. [cite: 142, 143]
-    * [cite_start]**LLM (OpenAI):** Configure and interact with large language models like GPT. [cite: 150]
-    * [cite_start]**Web Search:** A placeholder for a tool to search the web. [cite: 134]
-    * [cite_start]**Output:** Displays the final generated response. [cite: 158]
-* [cite_start]**Real-time Chat Interaction:** Test and run your workflows through an interactive chat modal. [cite: 167]
-* [cite_start]**Dockerized Deployment:** The entire full-stack application is containerized with Docker for easy setup and consistent deployment. [cite: 193]
+    * **User Query:** The entry point for user questions. [cite: 138, 140]
+    * **Knowledge Base:** Upload PDFs to provide context for the AI. [cite: 142, 143]
+    * **LLM (OpenAI):** Configure and interact with large language models like GPT. [cite: 150]
+    * **Web Search:** A placeholder for a tool to search the web. [cite: 134]
+    * **Output:** Displays the final generated response. [cite: 158]
+* **Real-time Chat Interaction:** Test and run your workflows through an interactive chat modal. [cite: 167]
+* **Dockerized Deployment:** The entire full-stack application is containerized with Docker for easy setup and consistent deployment. [cite: 193]
 
 ## Tech Stack
 
 | Category              | Technology                                   |
 | --------------------- | -------------------------------------------- |
-| **Frontend** | [cite_start]React.js [cite: 127]                         |
-| **Backend** | [cite_start]FastAPI (Python) [cite: 128]                  |
-| **Database** | [cite_start]PostgreSQL [cite: 129]                       |
-| **Drag & Drop** | [cite_start]React Flow [cite: 130]                       |
-| **Vector Store** | [cite_start]ChromaDB [cite: 131]                         |
-| **Text Extraction** | [cite_start]PyMuPDF [cite: 135]                          |
-| **AI Models** | [cite_start]OpenAI GPT (LLM), OpenAI Embeddings [cite: 132, 133] |
+| **Frontend** | React.js [cite: 127]                         |
+| **Backend** | FastAPI (Python) [cite: 128]                  |
+| **Database** | PostgreSQL [cite: 129]                       |
+| **Drag & Drop** | React Flow [cite: 130]                       |
+| **Vector Store** | ChromaDB [cite: 131]                         |
+| **Text Extraction** | PyMuPDF [cite: 135]                          |
+| **AI Models** | OpenAI GPT (LLM), OpenAI Embeddings [cite: 132, 133] |
 | **Deployment** | Docker                                       |
 
 ---
@@ -85,13 +85,13 @@ Once a workflow (called a "Stack") is built, users can test it in real-time by a
 
 The FastAPI backend exposes the following endpoints:
 
-* [cite_start]`POST /upload-document/`: Handles PDF file uploads for the Knowledge Base. [cite: 207]
-* [cite_start]`POST /stacks/`: Saves a new workflow. [cite: 215]
-* [cite_start]`GET /stacks/`: Retrieves all saved workflows. [cite: 215]
-* [cite_start]`POST /execute/`: Executes a given workflow with a user query. [cite: 209]
+* `POST /upload-document/`: Handles PDF file uploads for the Knowledge Base. 7]
+* `POST /stacks/`: Saves a new workflow. [cite: 215]
+* `GET /stacks/`: Retrieves all saved workflows. [cite: 215]
+* `POST /execute/`: Executes a given workflow with a user query. 9]
 
 ## Future Improvements
 
 * **Load Saved Stacks:** Implement the logic to load a saved stack back onto the canvas for editing.
-* [cite_start]**User Authentication:** Add user accounts to keep stacks private and secure. [cite: 238]
-* [cite_start]**Chat History:** Persist chat conversations for each stack. [cite: 235]
+* **User Authentication:** Add user accounts to keep stacks private and secure. [cite: 238]
+* **Chat History:** Persist chat conversations for each stack. 
