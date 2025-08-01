@@ -1,6 +1,7 @@
 # GenAI Stack - Visual Workflow Builder
 
-![GenAI Stack Screenshot](https-github-com-ashishsai960-AI-Planet-blob-main-Screenshot%202025-07-30%20at%201-33-20%E2%80%AFAM-jpg)
+![GenAI Stack Screenshot](https://github.com/ashishsai960/AI-Planet/blob/master/Application1.jpg)
+![GenAI Stack Screenshot](https://github.com/ashishsai960/AI-Planet/blob/master/Application2.jpg)
 
 ## Overview
 
